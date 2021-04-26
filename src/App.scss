@@ -1,0 +1,53 @@
+$bg-color: #fff;
+$nav-bg-color: #171717;
+$primary-text-color: #fff;
+
+.app {
+    background-color: $bg-color;
+    padding: 0;
+    margin: 0;
+}
+
+.app .navbar {
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    background-color: $nav-bg-color;
+    color: #fff;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app .navbar div:first-child {
+    margin-left: auto;
+}
+
+.app .navbar li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* UTILITY CLASSES */
+
+.text-center {
+    text-align: center;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.ml-1 {
+    margin-left: 10px;
+}
+
+.mr-1 {
+    margin-right: 10px;
+}
