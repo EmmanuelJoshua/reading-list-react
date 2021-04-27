@@ -1,4 +1,4 @@
-$bg-color: #fff;
+$bg-color: #474747;
 $nav-bg-color: #171717;
 $primary-text-color: #fff;
 
@@ -8,26 +8,53 @@ $primary-text-color: #fff;
     margin: 0;
 }
 
+.app {
+    .navbar {
+        position: absolute;
+        z-index: 99;
+        width: 100%;
+        background-color: $nav-bg-color;
+        color: #fff;
+        display: inline-flex;
+        flex-wrap: nowrap;
+        align-content: stretch;
+        justify-content: space-between;
+        align-items: center;
+        transition: all .5s ease;
+    }
+
+    .booklist {
+        background-color: $bg-color;
+        height: 100vh;
+        transition: all .5s ease;
+    }
+}
+
 .app .navbar {
-    position: relative;
-    z-index: 99;
-    width: 100%;
-    background-color: $nav-bg-color;
-    color: #fff;
-    display: inline-flex;
-    flex-wrap: nowrap;
-    align-content: stretch;
-    justify-content: space-between;
-    align-items: center;
-}
+    div:first-child {
+        margin-left: auto;
+    }
 
-.app .navbar div:first-child {
-    margin-left: auto;
-}
+    .theme-toggle {
+        border-radius: 4px;
+        background-color: #fff;
+        color: #171717;
+        margin-top: 4px;
+        padding: 5px;
+        cursor: pointer;
+    }
 
-.app .navbar li {
-    display: inline-block;
-    margin-right: 10px;
+    ul {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    li {
+        display: inline-block;
+        margin-right: 15px;
+    }
 }
 
 /* UTILITY CLASSES */
@@ -50,4 +77,8 @@ $primary-text-color: #fff;
 
 .mr-1 {
     margin-right: 10px;
+}
+
+.mt-1 {
+    margin-top: 10px;
 }
