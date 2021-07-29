@@ -1,7 +1,8 @@
 # Reading list
 
-A simple reading app built with React.js
-Making use of Context API and React Hooks
+A simple reading app built with React.js making use of Context API and React Hooks
+
+[Live demo](https://elated-kilby-6be47d.netlify.app/)
 
 ## Screenshots:
 
