@@ -4,11 +4,11 @@ $primary-text-color: #fff;
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
+
 .app {
-    background-color: $bg-color;
     padding: 0;
     margin: 0;
-    height: 100vh;
+    height: 100%;
 }
 
 .app {
@@ -261,7 +261,7 @@ $primary-text-color: #fff;
     .modal-input {
         width: 100%;
         height: 42px;
-        border: 1px solid #6438ec;
+        border: 1px solid #161f47;
         margin-bottom: 10px;
         padding-left: 10px;
         border-radius: 5px;
@@ -281,7 +281,7 @@ $primary-text-color: #fff;
         color: #fff;
         border-radius: 5px;
         background-color: transparent;
-        border: #5431cb dashed 2px;
+        border: #1e295a dashed 2px;
     }
 }
 
@@ -329,4 +329,51 @@ $primary-text-color: #fff;
 
 .mt-1 {
     margin-top: 10px;
+}
+
+/* RESPONSIVENESS SETTING */
+
+@media screen and (max-width: 510px) {
+
+    .app {
+        .booklist {
+            padding-top: 140px;
+            padding-left: 15px;
+            padding-right: 10px;
+        }
+    }
+
+    .app .navbar {
+        h1 {
+            margin-left: 20px;
+            font-weight: 700;
+            font-size: 1em;
+            font-family: 'Rubik';
+        }
+
+        li {
+            font-size: .8em;
+        }
+    }
+
+    .app .booklist,
+    .empty-booklist {
+        .bookdetails {
+            width: 130px;
+            height: 140px;
+
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+
+        .bookdetails-add {
+            width: 145px;
+            height: 85px;
+        }
+    }
+
+    .modal-content {
+        width: 310px !important;
+        height: 300px;
+    }
 }

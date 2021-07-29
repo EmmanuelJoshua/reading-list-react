@@ -29,7 +29,7 @@ const Modal = ({ show, closeModal }) => {
                         <div className='book'>
                             <Book className='book-icon' />
                         </div>
-                        <h4 className='modal-title'>Add book</h4>
+                        <h4 className='modal-title'>Add a book</h4>
                         <div className='cancel'>
                             <X className='cancel-icon' onClick={() => closeModal()} />
                         </div>

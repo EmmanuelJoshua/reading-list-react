@@ -1,13 +1,13 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 export const BookContext = createContext();
 
 const BookContextProvider = (props) => {
-    const [books, setBooks] = useState([
-        { title: 'name of the wind', author: 'patrick rothfuss', 'id': 1 },
-        { title: 'the final empire', author: 'brandon sanderson', 'id': 2 }
-    ]);
+    const [books, setBooks] = useState(() => {
+        const localData = localStorage.getItem('books');
+        return localData ? JSON.parse(localData) : [];
+    });
 
     const [show, setShow] = useState(false);
 
@@ -27,6 +27,10 @@ const BookContextProvider = (props) => {
     const closeModal = () => {
         setShow(false);
     }
+
+    useEffect(() => {
+        localStorage.setItem('books', JSON.stringify(books));
+    }, [books]);
 
     return (
         <BookContext.Provider value={{ books, show, addBook, removeBooks, openModal, closeModal }}>

@@ -46,6 +46,8 @@ const Booklist = () => {
     const { books, show, openModal, closeModal } = useContext(BookContext);
     const theme = isLightTheme ? light : dark;
 
+
+
     return <div>
         <Modal show={show} closeModal={closeModal} />
         {books.length ? (
@@ -59,7 +61,7 @@ const Booklist = () => {
                 <AddBook openModal={openModal} />
             </div>
         ) : (
-            <div className='empty-booklist' > <AddBook /> </div>
+            <div className='empty-booklist' > <AddBook openModal={openModal} /> </div>
         )}
 
     </div>
