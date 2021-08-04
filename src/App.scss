@@ -215,6 +215,10 @@ $primary-text-color: #fff;
         transition: all 0.3s ease-in-out;
     }
 
+    .user-modal {
+        height: 250px !important;
+    }
+
     .modal-footer {
         text-align: center;
     }

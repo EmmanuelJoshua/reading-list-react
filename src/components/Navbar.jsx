@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { ThemeContext } from '../contexts/ThemeContext';
 import { BookContext } from '../contexts/BookContext';
-// import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../contexts/UserContext';
 // import ThemeToggle from './ThemeToggle';
 
 //Accessing context using first method
@@ -56,16 +56,12 @@ const Navbar = () => {
 
     const { isLightTheme, light, dark } = useContext(ThemeContext);
     const { books } = useContext(BookContext);
-    // const { show } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const theme = isLightTheme ? light : dark;
-
-    useEffect(() => {
-        console.log('Im liveeee')
-    });
 
     return (
         <nav className='navbar' style={{ background: theme.navbg, color: theme.text }}>
-            <h1 className='ml-1'>Joshua's reading list</h1>
+            <h1 className='ml-1'> {!user ? 'Your reading list' : `${user}'s reading list`}</h1>
 
             <div className='mr-1'>
                 <ul>

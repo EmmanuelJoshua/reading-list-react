@@ -3,11 +3,11 @@ import { Book, X } from 'react-feather'
 import { BookContext } from '../contexts/BookContext';
 
 const BookDetails = ({ book }) => {
-    const { removeBooks } = useContext(BookContext);
+    const { booksDispatch } = useContext(BookContext);
     return (
         <div className='bookdetails'>
             <div className='cancel'>
-                <X className='cancel-icon' onClick={() => removeBooks(book.id)} />
+                <X className='cancel-icon' onClick={() => booksDispatch({ type: 'DELETE_BOOk', id: book.id })} />
             </div>
 
             <Book className='book-icon' />

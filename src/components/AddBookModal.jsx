@@ -4,22 +4,33 @@ import { BookContext } from '../contexts/BookContext';
 import { Book, X } from 'react-feather'
 import ReactDOM from 'react-dom';
 
-const Modal = ({ show, closeModal }) => {
+const AddBookModal = () => {
 
-    const { addBook } = useContext(BookContext);
+    const { showAddBooksModal, booksDispatch, booksModalDispatch } = useContext(BookContext);
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
 
+    const closeModal = () => {
+        booksModalDispatch({ type: 'CLOSE_MODAL' })
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        addBook(title, author);
+        booksDispatch({
+            type: 'ADD_BOOK', book: {
+                title, author
+            }
+        });
         setTitle('');
         setAuthor('');
+        closeModal();
     }
+
+
 
     return ReactDOM.createPortal(
         <CSSTransition
-            in={show}
+            in={showAddBooksModal}
             unmountOnExit
             timeout={{ enter: 0, exit: 300 }}
         >
@@ -54,4 +65,4 @@ const Modal = ({ show, closeModal }) => {
     )
 }
 
-export default Modal;
+export default AddBookModal;
