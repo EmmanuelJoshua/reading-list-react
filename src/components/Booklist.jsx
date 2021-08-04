@@ -3,7 +3,8 @@ import { ThemeContext } from '../contexts/ThemeContext';
 import { BookContext } from '../contexts/BookContext';
 import BookDetails from './BookDetail';
 import AddBook from './AddBook';
-import Modal from './Modal';
+import AddBookModal from './AddBookModal';
+import SetUsernameModal from './SetUsernameModal';
 
 //Accessing context using first method
 // class Booklist extends Component {
@@ -43,13 +44,19 @@ import Modal from './Modal';
 
 const Booklist = () => {
     const { isLightTheme, light, dark } = useContext(ThemeContext);
-    const { books, show, openModal, closeModal } = useContext(BookContext);
+    const { books, booksModalDispatch } = useContext(BookContext);
     const theme = isLightTheme ? light : dark;
 
-
+    const openModal = () => {
+        booksModalDispatch({
+            type:
+                'OPEN_MODAL'
+        })
+    }
 
     return <div>
-        <Modal show={show} closeModal={closeModal} />
+        <SetUsernameModal />
+        <AddBookModal />
         {books.length ? (
             <div className='booklist' style={{ color: theme.text }}>
                 {
